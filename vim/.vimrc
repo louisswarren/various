@@ -1,23 +1,69 @@
-set tabstop=4
-set shiftwidth=4
+"""""""""
+" Misc. "
+"""""""""
 
-set autoindent
-set scrolloff=2
+filetype plugin on
+
+""""""""""""""
+" Appearance "
+""""""""""""""
 
 " Colorscheme
 syntax enable
 set background=dark
 colorscheme solarized
 
-" Highlight 81st coloumn on overlong lines
-"highlight ColorColumn ctermbg=magenta
-"call matchadd('ColorColumn', '\%81v', 100)
-
-set number
 set cursorline
-execute "set colorcolumn=" . join(range(81,335), ',')
+set number
 
+set hlsearch
+
+
+"""""""""""""""
+" Visual Cues "
+"""""""""""""""
+
+" Highlight 82st coloumn on overlong lines
+highlight ColorColumn ctermbg=magenta
+call matchadd('ColorColumn', '\%82v', 100)
+
+" Highlight trailing whitespace
+highlight TrailingWhitespace ctermbg=magenta guibg=#382424
+autocmd ColorScheme * highlight TrailingWhitespace ctermbg=magenta guibg=magenta
+autocmd BufWinEnter * match TrailingWhitespace /\s\+$/
+autocmd InsertLeave * match TrailingWhitespace /\s\+$/
+autocmd InsertEnter * match TrailingWhitespace /\s\+\%#\@<!$/
+
+
+"""""""""""""
+" Behaviour "
+"""""""""""""
+
+" Make ~ an operator
+set tildeop
+
+" Tabs
+set autoindent
+set tabstop=4
+set shiftwidth=4
+
+" Scrolling
+set scrolloff=4
+
+" Set working directory automatically
 set autochdir
+
+" Searching
+set ignorecase
+set smartcase
+set incsearch
+
+""""""""""""
+" Bindings "
+""""""""""""
+
+" Quick esc
+inoremap jk <esc>
 
 " Semicolon to do colon commands
 nnoremap ; :
@@ -29,13 +75,8 @@ vnoremap : ;
 noremap <F7> :tabprev<CR>
 noremap <F8> :tabnext<CR>
 
-" Case-(in)sensitive searching
-set ignorecase
-set smartcase
-set incsearch
-set hlsearch
+" Clear highlight search
 nnoremap <silent> <C-l> :nohl<CR><C-l>
-
 
 " Easier centering
 nnoremap <space> zz
@@ -43,10 +84,4 @@ nnoremap <space> zz
 " Scroll using arrow keys
 map <Up> 2<C-y>
 map <Down> 2<C-e>
-
-
-" Quick esc
-inoremap jk <esc>
-
-filetype plugin on
 
