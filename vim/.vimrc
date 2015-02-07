@@ -4,6 +4,7 @@
 
 filetype plugin on
 
+
 """"""""""""""
 " Appearance "
 """"""""""""""
@@ -58,6 +59,7 @@ set ignorecase
 set smartcase
 set incsearch
 
+
 """"""""""""
 " Bindings "
 """"""""""""
@@ -84,4 +86,16 @@ nnoremap <space> zz
 " Scroll using arrow keys
 map <Up> 2<C-y>
 map <Down> 2<C-e>
+
+
+""""""""
+" gVim "
+""""""""
+
+set guifont=DejaVu_Sans_Mono:h12:cANSI
+set backspace=2
+
+" Hide menu and toolbars
+set guioptions-=m
+set guioptions-=T
 
