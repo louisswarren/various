@@ -24,9 +24,9 @@ set hlsearch
 " Visual Cues "
 """""""""""""""
 
-" Highlight 82st coloumn on overlong lines
+" Highlight 81st coloumn on overlong lines
 highlight ColorColumn ctermbg=magenta
-call matchadd('ColorColumn', '\%82v', 100)
+call matchadd('ColorColumn', '\%81v', 100)
 
 " Highlight trailing whitespace
 highlight TrailingWhitespace ctermbg=magenta guibg=#382424
