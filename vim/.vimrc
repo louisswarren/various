@@ -1,3 +1,19 @@
+""""""""""
+" Vundle "
+""""""""""
+
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+
+call vundle#begin()
+	Plugin 'gmarik/Vundle.vim'
+	Plugin 'Valloric/YouCompleteMe'
+call vundle#end()
+
+filetype plugin indent on
+
+
 """""""""
 " Misc. "
 """""""""
@@ -25,8 +41,11 @@ set hlsearch
 """""""""""""""
 
 " Highlight 81st coloumn on overlong lines
-highlight ColorColumn ctermbg=magenta
-call matchadd('ColorColumn', '\%81v', 100)
+"highlight ColorColumn ctermbg=magenta
+"call matchadd('ColorColumn', '\%82v', 100)
+
+" Colour in a column on the right side
+let &colorcolumn=join(range(81,84),",")
 
 " Highlight trailing whitespace
 highlight TrailingWhitespace ctermbg=magenta guibg=#382424
